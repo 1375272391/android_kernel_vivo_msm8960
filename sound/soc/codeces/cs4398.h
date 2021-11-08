@@ -2,92 +2,50 @@
  * ALSA SoC CS4398 codec driver
  *
  * Copyright 2015 Cirrus Logic, Inc.
-
  *
  * Author: Tim Howe <Tim.Howe@cirrus.com>
-
  *
-
  * This program is free software; you can redistribute it and/or
-
  * modify it under the terms of the GNU General Public License
-
  * version 2 as published by the Free Software Foundation.
-
  *
-
  * This program is distributed in the hope that it will be useful, but
-
  * WITHOUT ANY WARRANTY; without even the implied warranty of
-
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-
  * General Public License for more details.
-
  *
-
  */
-
 #ifndef __CS4398_H__
-
 #define __CS4398_H__
-
 /* CS4398 registers addresses */
-
 #define CS4398_CHIPID		0x01	/* Device and Rev ID, Read Only */#define CS4398_MODE		0x02	/* Mode Control */
-
 #define CS4398_VMI		0x03	/* Volume, Mixing, Inversion Control */
-
 #define CS4398_MUTE		0x04	/* Mute Control */
-
 #define CS4398_VOLA		0x05	/* DAC Channel A Volume Control */
-
 #define CS4398_VOLB		0x06	/* DAC Channel B Volume Control */
-
 #define CS4398_RMPFLT		0x07	/* Ramp and Filter Control */
-
 #define CS4398_MISC		0x08	/* Power Down,Freeze Control,Pop 
 #define CS4398_I2C_INCR		0x80
-
 /* Device and Revision ID */
-
 #define CS4398_REVA		0xF0	/* Rev A */
-
 #define CS4398_REVB		0xF1	/* Rev B */
-
 #define CS4398_REVC2		0xFF	/* Rev C2 */
 /* PDN_DONE Poll Maximum
-
  * If soft ramp is set it will take much longer to power down
-
  * the system.
-
  */
-
 #
-
 /* Bitfield Definitions */
-
 /* CS4398_MODE */
-
 /* (Digital Interface Format, De-Emphasis Control, Functional Mode */
-
 #define DIF2			(1 << 6)
-
 #define DIF1			(1 << 5)
-
 #define DIF0			(1 << 4)
-
 #define DEM1			(1 << 3)
-
 #define DEM0			(1 << 2)
-
 #define FM1			(1 << 1)
-
 #define DIF_LEFT_JST		0x00
-
 #define DIF_I2S			0x01
-
 #define DIF_RGHT_JST16		0x02
 
 #define DIF_RGHT_JST24		0x03
@@ -203,13 +161,9 @@
 /* CS4398_RMPFLT (Ramp and Filter Control) */
 
 #define SCZ1			(1 << 7)
-
 #define SCZ0			(1 << 6)
-
 #define RMP_UP			(1 << 5)
-
 #define RMP_DN			(1 << 4)
-
 #define FILT_SEL		(1 << 2)
 
 #define IMMDT_CHNG		0x31
